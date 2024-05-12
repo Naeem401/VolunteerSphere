@@ -147,7 +147,7 @@ const AddVolunteerPost = () => {
           ></textarea>
         </div>
         <div className='flex justify-end mt-6'>
-          <button className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+          <button className="btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-300">
             Save
           </button>
         </div>

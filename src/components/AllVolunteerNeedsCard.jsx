@@ -1,7 +1,7 @@
 
 
-const VolunteerNeedsCard = ({needVolunteerData}) => {
-const {thumbnail, title, category, deadline} = needVolunteerData || {}
+const AllVolunteerNeedsCard = ({data}) => {
+    const {thumbnail, title, category, deadline} = data || {}
     return (
         <div className="shadow-xl rounded-lg overflow-hidden flex flex-col h-full">
         <img className="w-full h-64 object-cover" src={thumbnail} alt={title} />
@@ -21,4 +21,4 @@ const {thumbnail, title, category, deadline} = needVolunteerData || {}
     );
 };
 
-export default VolunteerNeedsCard;
+export default AllVolunteerNeedsCard;
