@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const VolunteerNeedDetails = () => {
     const data = useLoaderData()
-    const {thumbnail, title, category, location, volunteersNeeded, deadline, organizer, description} = data || {}
+    const {thumbnail, title, category, location, volunteersNeeded, deadline, organizer, description, _id} = data || {}
   
     return (
         <div className="flex gap-6 justify-center items-center min-h-[calc(100vh-30px)] bg-gray-100">
@@ -49,7 +49,7 @@ const VolunteerNeedDetails = () => {
                     <h2 className="font-semibold text-blue-800 mb-2">Description:</h2>
                     <p className="text-gray-700">{description}</p>
                 </div>
-                <Link to='/' className="mt-4">
+                <Link to={`/request/${_id}`} className="mt-4">
          <button
             className="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-3 px-4 rounded transition duration-300 ease-in-out"
           >
