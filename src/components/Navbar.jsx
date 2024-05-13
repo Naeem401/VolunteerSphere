@@ -1,11 +1,12 @@
 import { useContext } from "react"
-import { Link, NavLink } from "react-router-dom"
+import {  NavLink } from "react-router-dom"
 import { AuthContext } from "../provider/AuthProvider"
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
   return (
-    <div className='navbar bg-gradient-to-r from-purple-600 to-blue-300 shadow-sm container px-4 mx-auto'>
+   <div className="bg-gradient-to-r from-purple-600 to-blue-300 shadow-sm">
+     <div className='navbar container px-4 mx-auto'>
       <div className='flex-1'>
         <div className='flex gap-2 items-center font-bold text-white text-lg'>
           <h2 >VolunteerSphere</h2>
@@ -80,6 +81,7 @@ const Navbar = () => {
         )}
       </div>
     </div>
+   </div>
   )
 }
 

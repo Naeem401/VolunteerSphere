@@ -15,11 +15,12 @@ const Home = () => {
     }, [])
 
     const getData = async () => {
-        const { data } = await axios(`http://localhost:5000/home`)
-        setNeedVolunteer(data)
+        const response = await axios.get('http://localhost:5000/posts');
+        const limitedData = response.data.slice(0, 6);
+        setNeedVolunteer(limitedData);
     }
     return (
-        <div>
+        <div className="bg-gray-100">
             <Carousel />
             
             <VolunteerNeedsNowSection />

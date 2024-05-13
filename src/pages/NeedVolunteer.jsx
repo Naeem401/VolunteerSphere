@@ -14,13 +14,13 @@ const NeedVolunteer = () => {
     }, []);
 
     const fetchPosts = async () => {
-        const response = await axios.get('http://localhost:5000/');
+        const response = await axios.get('http://localhost:5000/posts');
         setPosts(response.data);
     }
 
 
     const handleSearch = async () => {
-        const response = await axios.get(`http://localhost:5000/?title=${searchTerm}`);
+        const response = await axios.get(`http://localhost:5000/posts?title=${searchTerm}`);
         setPosts(response.data);
     };
 
@@ -48,8 +48,8 @@ const NeedVolunteer = () => {
 
 
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {posts.map((post) => (
-                        <AllVolunteerNeedsCard key={post._id} data={post} />
+                    {posts.map((p) => (
+                        <AllVolunteerNeedsCard key={p._id} data={p} />
                     ))}
                 </div>
             </div>

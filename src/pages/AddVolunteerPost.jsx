@@ -36,7 +36,7 @@ const AddVolunteerPost = () => {
     console.log(volunteerPostData)
     try {
       const { data } = await axios .post(
-        `http://localhost:5000`,
+        `http://localhost:5000/posts`,
         volunteerPostData
       )
       console.log(data)

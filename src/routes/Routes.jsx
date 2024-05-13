@@ -8,6 +8,7 @@ import AddVolunteerPost from '../pages/AddVolunteerPost'
 import ManageMyPost from '../pages/ManageMyPost'
 import PrivateRoute from './PrivateRoute'
 import NeedVolunteer from '../pages/NeedVolunteer'
+import VolunteerNeedDetails from '../pages/VolunteerNeedDetails'
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,12 @@ const router = createBrowserRouter([
      {
       path: '/need-volunteer',
       element: <NeedVolunteer/>
+     },
+     {
+      path:'/details/:id',
+      element: (<PrivateRoute><VolunteerNeedDetails/></PrivateRoute>),
+      loader: ({ params }) =>
+        fetch(`http://localhost:5000/post/${params.id}`),
      },
      {
       path: '/login',
