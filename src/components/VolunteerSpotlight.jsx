@@ -8,10 +8,15 @@ const VolunteerSpotlight = () => {
     getData()
 }, [])
 
+useEffect(() => {
+  getData()
+}, [])
+
 const getData = async () => {
-    const { data } = await axios(`http://localhost:5000/dummyVolunteers`)
-    setVolunteers(data)
+  const { data } = await axios(`https://volunteer-sphere-backend.vercel.app/dummyVolunteers`)
+  setVolunteers(data)
 }
+
 
   return (
     <section className=" py-12">

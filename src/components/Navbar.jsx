@@ -64,7 +64,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to='/mypost'
+                 to='/myPost'
                   className='text-gray-800 hover:text-blue-600'
                   activeClassName='text-blue-800 font-semibold'
                 >

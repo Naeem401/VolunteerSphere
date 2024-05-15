@@ -9,16 +9,16 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
     const [needVolunteer, setNeedVolunteer] = useState([])
-
     useEffect(() => {
         getData()
     }, [])
 
     const getData = async () => {
-        const response = await axios.get('http://localhost:5000/posts');
+        const response = await axios.get('https://volunteer-sphere-backend.vercel.app/posts');
         const limitedData = response.data.slice(0, 6);
         setNeedVolunteer(limitedData);
     }
+    
     return (
         <div className="bg-gray-100">
             <Carousel />
