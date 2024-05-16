@@ -1,17 +1,18 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../provider/AuthProvider";
+import { useEffect, useState } from "react";
+
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const ManageMyPostPage = () => {
-  const { user } = useContext(AuthContext) || {};
+  const { user } = useContext(AuthContext)
   const [posts, setPosts] = useState([]);
 
    
   useEffect(() => {
-    if (user?.email) {
       axios.get(`https://volunteer-sphere-backend.vercel.app/needVolunteerPost/${user.email}`)
         .then((response) => {
           setPosts(response.data);
@@ -19,9 +20,9 @@ const ManageMyPostPage = () => {
         .catch((error) => {
           console.error('Error fetching posts:', error);
         });
-    }
+  
   }, [user]);
-
+console.log(posts)
   const handleDelete = async (id) => {
     const confirmed = await Swal.fire({
       title: 'Are you sure?',
@@ -37,7 +38,7 @@ const ManageMyPostPage = () => {
       try {
         const response = await axios.delete(`https://volunteer-sphere-backend.vercel.app/mypost/${id}`);
         if (response.data.deletedCount > 0) {
-          const remainingData = posts.filter((spot) => spot._id !== id);
+          const remainingData = posts.filter((post) => post._id !== id);
           setPosts(remainingData);
           await Swal.fire({
             title: 'Deleted!',
