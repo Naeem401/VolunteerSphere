@@ -33,7 +33,7 @@ const UpdatePage = () => {
         },
       }
       console.log(volunteerPostData)
-      fetch(`https://volunteer-sphere-backend.vercel.app/volunteer-post/${_id}`, {
+      fetch(`https://volunteer-sphere-backend-eight.vercel.app/volunteer-post/${_id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

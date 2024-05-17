@@ -13,7 +13,7 @@ const ManageMyPostPage = () => {
 
    
   useEffect(() => {
-      axios.get(`https://volunteer-sphere-backend.vercel.app/needVolunteerPost/${user.email}`)
+      axios.get(`https://volunteer-sphere-backend-eight.vercel.app/needVolunteerPost/${user.email}`)
         .then((response) => {
           setPosts(response.data);
         })
@@ -36,7 +36,7 @@ console.log(posts)
 
     if (confirmed.isConfirmed) {
       try {
-        const response = await axios.delete(`https://volunteer-sphere-backend.vercel.app/mypost/${id}`);
+        const response = await axios.delete(`https://volunteer-sphere-backend-eight.vercel.app/mypost/${id}`);
         if (response.data.deletedCount > 0) {
           const remainingData = posts.filter((post) => post._id !== id);
           setPosts(remainingData);

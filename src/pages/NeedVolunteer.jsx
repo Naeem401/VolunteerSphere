@@ -14,13 +14,13 @@ const NeedVolunteer = () => {
     }, []);
 
     const fetchPosts = async () => {
-        const response = await axios.get('https://volunteer-sphere-backend.vercel.app/posts');
+        const response = await axios.get('https://volunteer-sphere-backend-eight.vercel.app/posts');
         setPosts(response.data);
     }
 
 
     const handleSearch = async () => {
-        const response = await axios.get(`https://volunteer-sphere-backend.vercel.app/posts?title=${searchTerm}`);
+        const response = await axios.get(`https://volunteer-sphere-backend-eight.vercel.app/posts?title=${searchTerm}`);
         setPosts(response.data);
     };
 

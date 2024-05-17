@@ -31,13 +31,13 @@ const router = createBrowserRouter([
       path:'/details/:id',
       element: (<PrivateRoute><VolunteerNeedDetails/></PrivateRoute>),
       loader: ({ params }) =>
-        fetch(`https://volunteer-sphere-backend.vercel.app/post/${params.id}`),
+        fetch(`https://volunteer-sphere-backend-eight.vercel.app/post/${params.id}`),
      },
      {
       path: '/request/:id',
       element:(<PrivateRoute><VolunteerFormRequest/></PrivateRoute>),
       loader: ({ params }) =>
-        fetch(`https://volunteer-sphere-backend.vercel.app/post/${params.id}`),
+        fetch(`https://volunteer-sphere-backend-eight.vercel.app/post/${params.id}`),
      },
      {
       path: '/login',
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       path: '/update/:id',
       element: <PrivateRoute><UpdatePage/></PrivateRoute>,
       loader: ({ params }) =>
-        fetch(`https://volunteer-sphere-backend.vercel.app/post/${params.id}`),
+        fetch(`https://volunteer-sphere-backend-eight.vercel.app/post/${params.id}`),
      }
     ],
   },

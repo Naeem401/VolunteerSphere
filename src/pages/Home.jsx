@@ -14,7 +14,7 @@ const Home = () => {
     }, [])
 
     const getData = async () => {
-        const response = await axios.get('https://volunteer-sphere-backend.vercel.app/posts');
+        const response = await axios.get('https://volunteer-sphere-backend-eight.vercel.app/posts');
         const limitedData = response.data.slice(0, 6);
         setNeedVolunteer(limitedData);
     }

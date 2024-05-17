@@ -35,7 +35,7 @@ const AddVolunteerPost = () => {
     }
     console.log(volunteerPostData)
     const { data } = await axios .post(
-      `https://volunteer-sphere-backend.vercel.app/posts`,
+      `https://volunteer-sphere-backend-eight.vercel.app/posts`,
       volunteerPostData
     )
     console.log(data)

@@ -7,13 +7,8 @@ const VolunteerSpotlight = () => {
   useEffect(() => {
     getData()
 }, [])
-
-useEffect(() => {
-  getData()
-}, [])
-
 const getData = async () => {
-  const { data } = await axios(`https://volunteer-sphere-backend.vercel.app/dummyVolunteers`)
+  const { data } = await axios(`https://volunteer-sphere-backend-eight.vercel.app/dummyVolunteers`)
   setVolunteers(data)
 }
 
